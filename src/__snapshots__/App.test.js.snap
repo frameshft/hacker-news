@@ -150,12 +150,9 @@ exports[`test snapshots 1`] = `
     className="table" />
   <div
     className="interactions">
-    <button
-      className=""
-      onClick={[Function]}
-      type="button">
-      More
-    </button>
+    <div>
+      Loading...
+    </div>
   </div>
 </div>
 `;

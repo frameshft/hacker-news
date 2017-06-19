@@ -14,12 +14,21 @@ describe('App', () => {
 
 test('snapshots', () => {
   const component = renderer.create(
-    <App />
+    <App />,
+    {createNodeMock}
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
+const createNodeMock = (element) => {
+  if (element.type === 'input') {
+    return {
+      focus() {},
+    };
+  }
+  return null;
+}
 describe('Search', () => {
   it('renders', () => {
     const div = document.createElement('div');
@@ -27,7 +36,7 @@ describe('Search', () => {
   });
 
   test('snapshots', () => {
-    const component = renderer.create(<Search>Search</Search>);
+    const component = renderer.create(<Search>Search</Search>, {createNodeMock});
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
