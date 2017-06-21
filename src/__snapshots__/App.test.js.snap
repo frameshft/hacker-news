@@ -1,7 +1,7 @@
 exports[`Button snapshots 1`] = `
 <button
   className=""
-  onClick={undefined}
+  onClick={[Function]}
   type="button">
   Give Me More
 </button>
@@ -9,9 +9,9 @@ exports[`Button snapshots 1`] = `
 
 exports[`Search snapshots 1`] = `
 <form
-  onSubmit={undefined}>
+  onSubmit={[Function]}>
   <input
-    onChange={undefined}
+    onChange={[Function]}
     type="text"
     value={undefined} />
   <button
