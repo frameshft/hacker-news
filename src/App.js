@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import './App.css';
+
 
 const DEFAULT_QUERY = 'redux';
 const DEFAULT_PAGE = 0;
@@ -238,14 +240,9 @@ Button.defaultProps = {
 }
 
 const Sort = ({ sortKey, onSort, activeSortKey, children }) => {
-  const sortClass = ['button-inline'];
-
-  if (sortKey === activeSortKey) {
-    sortClass.push('button-active');
-  }
-
+  const sortClass = classNames('button-inline',{ 'button-active': sortKey === activeSortKey });
   return (
-    <Button onClick={() => onSort(sortKey)} className={sortClass.join(' ')}>
+    <Button onClick={() => onSort(sortKey)} className={sortClass}>
       {children}
     </Button>
   );
