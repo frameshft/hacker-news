@@ -181,6 +181,11 @@ const Table = ({ list, sortKey, onSort, onDismiss, isSortReverse}) => {
           </Sort>
         </span>
         <span style={{ width: '10%' }}>
+          <Sort sortKey={'COMMENTS'} onSort={onSort} activeSortKey={sortKey}>
+            Comments
+          </Sort>
+        </span>
+        <span style={{ width: '10%' }}>
           <Sort sortKey={'POINTS'} onSort={onSort} activeSortKey={sortKey}>
             Points
           </Sort>
